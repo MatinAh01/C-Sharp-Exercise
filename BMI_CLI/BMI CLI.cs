@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace BMI_CLI
 {
@@ -6,8 +6,8 @@ namespace BMI_CLI
     {
         static void Main(string[] args)
         {
-            Perform(args);
             Accredit(args);
+            Perform(args);
 
         }
         static void Perform(string[] args)
