@@ -19,9 +19,9 @@ namespace BMI_CLI
             double height, weight;
             switch (switch1)
             {
-                case "height":
+                case "--height":
 
-                    if (switch2 != "weight")
+                    if (switch2 != "--weight")
                     {
                         InvalidInput();
                         break;
@@ -30,9 +30,9 @@ namespace BMI_CLI
                     weight = Convert.ToDouble(args[4]);
                     BmiCalculate(height, weight);
                     break;
-                case "weight":
+                case "--weight":
 
-                    if (switch2 != "height")
+                    if (switch2 != "--height")
                     {
                         InvalidInput();
                         break;
@@ -49,7 +49,7 @@ namespace BMI_CLI
         }
         static void Accredit(string[] args)
         {
-            if (args.Length == 0 || args[0] != "bmi")
+            if (args.Length == 0 || args[0] != "bmi" || args[0] == "bmi")
             {
                 InvalidInput();
                 Environment.Exit(0);
@@ -70,8 +70,8 @@ namespace BMI_CLI
         }
         static void BmiCalculate(double height, double weight)
         {
-            var bmi = weight / (Math.Pow(height, 2));
             height = height / 100;
+            var bmi = weight / (Math.Pow(height, 2));
             Console.WriteLine($"your bmi is {bmi}");
 
 
